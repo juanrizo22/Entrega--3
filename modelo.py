@@ -9,6 +9,7 @@ class Modelo(QObject):
         self.carpeta = 'images'
         self.current_images = []
         self.current_index = 0
+        self.cargar_imagenes()
 
     def cargar_imagenes(self):
         self.current_images = [imagen for imagen in os.listdir(self.carpeta) if imagen.endswith('.dcm')]
@@ -23,7 +24,7 @@ class Modelo(QObject):
                 f"Tipo de escaneo: {ds.Modality}",
                 f"Fecha del escaneo: {ds.StudyDate}",
                 f"Descripción del paciente: {ds.PatientName}",
-                f"Institución: {ds.InstitutionName}"
+                f"Identificacion {ds.PatientID}"
             ]
         else:
             return ["", "", "", "", ""]

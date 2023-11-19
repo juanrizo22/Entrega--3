@@ -7,6 +7,7 @@ class Vista(QMainWindow):
     def __init__(self):
         super().__init__()
         loadUi('base.ui', self)
+        
 
     def setup(self):
         self.slider.setMinimum(1)
@@ -36,3 +37,5 @@ class Vista(QMainWindow):
 
     def mostrar_error(self, mensaje):
         QMessageBox.critical(self, "Error", mensaje)
+
+    
