@@ -14,6 +14,7 @@ class Vista(QMainWindow):
         self.slider.setMaximum(len(self.mi_coordinador.modelo.current_images))
         self.slider.setValue(1)
         self.slider.valueChanged.connect(self.cargar)
+        self.pushButton.clicked.connect(self.cerrar)
         self.mostrar_info()
 
     def addControlador(self, c):
@@ -37,5 +38,8 @@ class Vista(QMainWindow):
 
     def mostrar_error(self, mensaje):
         QMessageBox.critical(self, "Error", mensaje)
+
+    def cerrar(self):
+        self.hide()
 
     
